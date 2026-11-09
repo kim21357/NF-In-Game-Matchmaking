@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generic metadata example; replace all values and retain your mod's real operations. -->
+<modification
+    application="Heroes of Newerth Reborn"
+    appversion="*"
+    mmversion="*"
+    name="Example Mod"
+    version="1.2.0"
+    author="Example Author"
+    updaterepo="OWNER/REPO"
+    updateid="example-mod"
+    description="Replace with your mod description."
+>
+    <!-- Keep original editfile, copyfile and dependency entries here. -->
+</modification>
