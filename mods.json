@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "mods": {
+    "nf-in-game-matchmaking": {
+      "name": "NF In-Game Matchmaking",
+      "version": "1.0.20",
+      "releaseTag": "nf-in-game-matchmaking-v1.0.20",
+      "asset": "NF-In-Game-Matchmaking-v1.0.20.honmod",
+      "sha256": "c3486ad0c8c9ef1555cfc36ee1b386e1f63c12e8a6f8b4dff34135760c45eaf3",
+      "size": 23946,
+      "notes": "TEST ONLY: metadata-only update. No gameplay changes."
+    }
+  }
+}
