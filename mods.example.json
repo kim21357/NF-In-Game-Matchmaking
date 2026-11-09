@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "mods": {
+    "example-mod": {
+      "name": "Example Mod",
+      "version": "1.2.0",
+      "releaseTag": "example-mod-v1.2.0",
+      "asset": "Example-Mod_v1.2.0.honmod",
+      "sha256": "REPLACE_WITH_REAL_64_CHARACTER_LOWERCASE_SHA256",
+      "size": 12345,
+      "notes": "Replace this with your actual release notes"
+    }
+  }
+}
