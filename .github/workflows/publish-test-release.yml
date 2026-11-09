@@ -1,0 +1,37 @@
+name: Publish matchmaking test release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "release-assets/NF-In-Game-Matchmaking-v1.0.20.honmod"
+      - ".github/workflows/publish-test-release.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Check release file and SHA-256
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "c3486ad0c8c9ef1555cfc36ee1b386e1f63c12e8a6f8b4dff34135760c45eaf3  release-assets/NF-In-Game-Matchmaking-v1.0.20.honmod" | sha256sum --check
+      - name: Publish metadata-only test release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          tag="nf-in-game-matchmaking-v1.0.20"
+          asset="release-assets/NF-In-Game-Matchmaking-v1.0.20.honmod"
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release upload "$tag" "$asset" --clobber
+          else
+            gh release create "$tag" "$asset" --title "NF In-Game Matchmaking v1.0.20 (Update Test)" --notes "Test-only metadata update from v1.0.19 to v1.0.20. No game feature or asset changes. This release tests Newerth Forge GitHub-based .honmod update detection." --latest=false
+          fi
